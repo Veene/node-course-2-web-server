@@ -37,18 +37,8 @@ hbs.registerHelper('screamIt', (text) => {
 })
 
 //request, response is EXPRESS specific!!!!
-app.get('/', (req, res) => {
-    // res.send('<h1>hello express!</h1>')
-    res.send({
-        name: 'John', 
-        likes: [
-            'Biking',
-            'Coding'
-        ]
-    })
-});
 
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
     res.render('home.hbs', {
         pageTitle: 'Home Page',
         welcomeMessage: 'This is the home page!'
@@ -58,6 +48,12 @@ app.get('/home', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('about.hbs', {
         pageTitle: 'About Page',
+    })
+})
+
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+        pageTitle: 'Projects'
     })
 })
 
